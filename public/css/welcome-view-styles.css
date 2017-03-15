@@ -8,7 +8,6 @@
 
 #menu-div {
   width: 100%;
-  margin: 10px 20px 20px 20px;
 }
 
 #title {
@@ -31,6 +30,7 @@
 #select-title{
   font-style: italic;
   font-weight: bold;
+  margin-left: 30px;
   display: block;
 }
 
@@ -48,14 +48,15 @@
 }
 
 .app-card {
+  margin: 0 auto;
   min-height: 40vh;
   padding: 0 0 20px 0;
-  margin: 0 10px 10px 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   background-color: #F5F5FF;
   border-radius: 10px;
   text-align: center;
   overflow: hidden;
-
 }
 
 a:hover {
@@ -68,20 +69,22 @@ a:hover {
 
 .app-card-header {
   background-color: #555555;
-  color: white;
+  color: #F5F5F5;
   min-height: 50px;
   width: 100%;
   font-size: 1.5em;
   font-weight: bold;
-  padding-top: 10px;
+  padding: 10px;
 }
 
 .row-centered {
+    margin: 0 auto;
     text-align:center;
 }
+
 .col-centered {
-    display:inline-block;
     float:none;
+    display:inline-block;
 }
 
 .card-text {

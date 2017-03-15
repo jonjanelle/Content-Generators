@@ -23,9 +23,9 @@
 
       <div class="container-fluid row-centered">
         <div class="row row-centered">
-          <a href="/text" class="col col-md-3 col-sm-5 col-xs-10 col-centered app-card shadowbox">
+          <a href="/text" class="col col-md-3 col-sm-5 col-xs-11 col-centered app-card shadowbox">
             <div class="app-card-header">
-              Filler Text Generator
+              Text Generator
             </div>
             <div class="card-text">
               Generate lorem ipsum filler text to given specifications
@@ -33,8 +33,8 @@
             <span class="glyphicon glyphicon-pencil card-icon" aria-hidden="true"></span>
           </a>
 
-          <a href="/color" class="col col-md-3 col-sm-5 col-xs-10 col-centered app-card shadowbox">
-            <div class="app-card-header">Color Palette Generator</div>
+          <a href="/color" class="col col-md-3 col-sm-5 col-xs-11 col-centered app-card shadowbox">
+            <div class="app-card-header">Color Generator</div>
             <div class="card-text">
               Generate color palettes from a specified base color
             </div>
@@ -43,8 +43,8 @@
             <span class="glyphicon glyphicon-tint card-icon blue" aria-hidden="true"></span>
           </a>
 
-          <a href="/data" class="col col-md-3 col-sm-5 col-xs-10 col-centered app-card shadowbox">
-            <div class="app-card-header">Random Data Generator</div>
+          <a href="/data" class="col col-md-3 col-sm-5 col-xs-11 col-centered app-card shadowbox">
+            <div class="app-card-header">Data Generator</div>
             <div class="card-text">
               Generate random tables of data that follow a specified pattern
             </div>
