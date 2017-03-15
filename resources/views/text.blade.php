@@ -30,7 +30,7 @@
         </div>
 
         <div class="col col-md-6">
-          <label>Max deviation from average sentences per paragraph:</label>
+          <label>Max deviation from average sentences per paragraph: </label>
           <input type="number" class="form-control" name="sent_dev" value="2">
         </div>
 

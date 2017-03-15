@@ -37,7 +37,7 @@
     // $sLen : int average number of words per sentence
     // $devS : int max absolute deviation from words per sentence
     */
-    function getParagraph($spp, $devP, $sLen, $devS, $headers) {
+    function getParagraph($spp, $devP, $sLen, $devS, $headers,$punct) {
       if ($headers) {
         $paragraph = array();
         $head ="";
@@ -56,7 +56,7 @@
       $body = "";
       $spp=$spp + rand(-$devP, $devP);
       for ($j=0; $j<$spp; $j++) { //sentences per paragraph loop
-        $body.=$this->getSentence($sLen, $devS);
+        $body.=$this->getSentence($sLen, $devS,$punct);
       }
       $paragraph['body'] = $body;
       return $paragraph;
@@ -67,7 +67,7 @@
     * $sLen : int average number of words per sentence
     * $devS : int max absolute deviation from words per sentence
     */
-    function getSentence($sLen, $devS){
+    function getSentence($sLen, $devS, $punct){
       $sentence = "";
       //generate new length for next sentence within deviation bounds
       $sLen=$sLen + rand(-$devS,$devS);
@@ -80,7 +80,7 @@
         }
       }
       //add last word and end each sentence with a period.
-      $sentence.=$this->wordList[rand(0,$this->length-1)].". ";
+      $sentence.=$this->wordList[rand(0,$this->length-1)].array_rand($punct);
       return $sentence;
     }
 
