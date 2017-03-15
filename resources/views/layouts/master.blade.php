@@ -7,9 +7,8 @@
 
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
 
-    <!--Bootstrap-->
+    <!--Bootstrap 3-->
     <!-- Latest compiled and minified CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
@@ -41,7 +40,7 @@
 
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li selected><a class="nav-text" href="/text">Text</a></li>
+            <li><a class="nav-text" href="/text">Text</a></li>
             <li><a class="nav-text" href="/data">Data</a></li>
             <li><a class="nav-text" href="/color">Colors</a></li>
           </ul>
@@ -50,9 +49,7 @@
       </div>
     </nav>
 
-    <section>
-      @yield('content')
-    </section>
+    @yield('content')
     @stack('body')
   </body>
 </html>

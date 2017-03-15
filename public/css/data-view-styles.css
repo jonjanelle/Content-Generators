@@ -1,31 +1,88 @@
-#data-table {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-
-#data-table th, td {
-  text-align: center;
-}
-
-
-#data-table tr {
-  background-color: #F9F9FF;
-  border: 2px solid black;
-}
-
-.table-container {
-  overflow: auto;
-  overflow-y: scroll;
-  position: relative;
+/*
+FORM STYLES
+*/
+#main_form {
   width: auto;
-  max-width: 30%;
-  max-height: 300px;
-  border: 2px solid black;
-  border-radius: 5px;
-
+  height: 100vh;
+  float: left;
+  margin: 0 auto;
+  background-color: #FAFAFF;
+  text-align: center;
+  border-right: 1px solid #AAAABF;
 }
 
-.table-container:hover {
-  box-shadow: 5px 5px 15px 0px rgba(100,100,100,.7);
+#submit-button {
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 70%;
+  overflow: hidden;
+}
+
+.form-header {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 10px 15px 0 15px;
+  letter-spacing: 5px;
+  background-color: #555555;
+  color: #F5F5F5;
+  border-bottom: 2px solid #BABACF;
+  text-align: center;
+  overflow: hidden;
+}
+
+.form-section-title {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  letter-spacing: 4px;
+  font-weight: bold;
+  color: #3030AF;
+  text-align: center;
+  border-bottom: 1px solid #709070;
+}
+
+.form-body {
+  margin: 0 15px 0 15px;
+  text-align: left;
+}
+.form-row {
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+/*
+DATA TABLE STYLE
+*/
+th {
+  text-align: center;
+}
+
+#table-container {
+  float: left;
+  margin-left: 5%;
+  margin-top: 10vh;
+  width: 30%;
+  height: 70vh;
+  overflow-y:auto;
+  margin: 1px solid #DDDDDD;
+}
+
+#main-table {
+  text-align: center;
+}
+
+/*
+Chart styles
+*/
+#chartdiv {
+  float: left;
+  margin-top: 10vh;
+  margin-left:5%;
+  width: 30%;
+  height: 70vh;
+  background-color: #FFFFFF;
 }

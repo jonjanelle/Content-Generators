@@ -10,11 +10,17 @@
     */
     public function index(){
       $data = [['x'=>0, 'y'=>0]];
-      return view('data')->with(['data'=>$data]);
+      return view('data')->with(['data'=>$data,
+                                 'xHead'=>'X',
+                                 'yHead'=>'Y']);
     }
 
-    public function show() {
-      $data1 = new RandData(25);
+    public function show(Request $request) {
+      $nPoints = $request->input("n-points"); //number of points
+      $data1 = new RandData($nPoints);
+
+      $type = $request->input(""); 
+
       $data1->genLinear(3,40,1.5);
 
       $xVals = $data1->getXArr();
@@ -24,8 +30,10 @@
       for ($i = 0; $i < $data1->length(); $i++) {
         $data[] = ['x'=>$xVals[$i],'y'=>$yVals[$i]];
       }
+      $data1=json_encode($data);
 
-      return view('data')->with(['data'=>$data]);
-
+      return view('data')->with(['data'=>$data,
+                                 'xHead'=>'Xs',
+                                 'yHead'=>'Ys']);
     }
 }

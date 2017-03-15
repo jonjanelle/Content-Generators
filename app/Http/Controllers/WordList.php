@@ -7,7 +7,6 @@
     Created: 3/11/2017
   */
   class WordList{
-    private $fileName;
     private $wordList;
     private $length;
 
@@ -17,14 +16,16 @@
     //             Each line is assumed to contain one word.
     */
     function __construct($fileName) {
-      $this->fileName = $fileName;
-
-      //File in public disk. Created symbollic link with php artisan storage:link
-      $fh=fopen(asset("storage/word_list.csv"), "r") or die("Unable to open file.");
-      $this->wordList = array();
+      //File in storage/public disk. Created symbollic link with php artisan storage:link
+      /*
+      $fh=fopen(asset($fileName), "r") or die("Unable to open file.");
+      $this->wordList =array();
       while (!feof($fh)) {
+        $this->wordList[] = trim(fgets($fh));
         array_push($this->wordList,trim(fgets($fh))); //add all words to array
       }
+      */
+      $this->wordList =array("blah","blah","blah");
       //length is total number of words in wordList
       $this->length = count($this->wordList);
     }
@@ -37,7 +38,7 @@
     // $sLen : int average number of words per sentence
     // $devS : int max absolute deviation from words per sentence
     */
-    function getParagraph($spp, $devP, $sLen, $devS, $headers) {
+    function getParagraph($spp, $devP, $sLen, $devS, $headers, $punct) {
       if ($headers) {
         $paragraph = array();
         $head ="";
@@ -56,7 +57,7 @@
       $body = "";
       $spp=$spp + rand(-$devP, $devP);
       for ($j=0; $j<$spp; $j++) { //sentences per paragraph loop
-        $body.=$this->getSentence($sLen, $devS);
+        $body.=$this->getSentence($sLen, $devS, $punct);
       }
       $paragraph['body'] = $body;
       return $paragraph;
@@ -67,7 +68,7 @@
     * $sLen : int average number of words per sentence
     * $devS : int max absolute deviation from words per sentence
     */
-    function getSentence($sLen, $devS){
+    function getSentence($sLen, $devS, $punct){
       $sentence = "";
       //generate new length for next sentence within deviation bounds
       $sLen=$sLen + rand(-$devS,$devS);
@@ -80,7 +81,8 @@
         }
       }
       //add last word and end each sentence with a period.
-      $sentence.=$this->wordList[rand(0,$this->length-1)].array_rand($punct);
+      $endPunct = $punct[array_rand($punct)]." ";
+      $sentence.=$this->wordList[rand(0,$this->length-1)].$endPunct;
       return $sentence;
     }
 

@@ -9,13 +9,9 @@
   width: 70%;
 }
 
-#draggable {
-  background-color: white;
-}
-
 #main_form {
   display: none;
-  width: 90%;
+  width: 95vw;
   margin: 0 auto;
   margin-top: 10px;
   border-top-right-radius: 10px;
@@ -26,6 +22,7 @@
   text-align: center;
   border: 2px solid #AAAABF;
 }
+
 #open-form {
   width: 100%;
   font-size: 1.5em;
@@ -34,13 +31,14 @@
 }
 
 .form-header {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: bold;
-  padding-top: 10px 10px 0 10px;
+  padding: 10px 15px 0 15px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   letter-spacing: 5px;
-  background-color: #DADAFF;
+  background-color: #555555;
+  color: #F5F5F5;
   border-bottom: 2px solid #BABACF;
 }
 
@@ -49,14 +47,13 @@
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  border-radius: 10px;
   font-size: 1.5em;
   letter-spacing: 4px;
   font-weight: bold;
-  color: #3030BF;
-  background-color: rgba(220,250,220,.5);
-  border: 3px solid #3030DF;
+  color: #3030AF;
+  border-bottom: 1px solid #709070;
 }
+
 .row {
   margin: 0 10px 0 10px;
 }
@@ -67,7 +64,6 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-
 
 .result-header {
   width: 90%;
