@@ -38,16 +38,16 @@
       }
 
       /**
-        *
-        *
+        * f(x) = k*b^x
+        * f(x) = $coeff*$base^x
       */
-      public function genExponential ($coeff, $base, $dispersion, $scale=1) {
+      public function genExponential($coeff, $base, $dispersion, $scale=1) {
         $this->xArr = array(); #Clear any current data.
         $this->yArr = array();
         $x=0;
         for ($i=0; $i < $this->len; $i++){
           $this->xArr[]=$x;
-          $dx = mt_rand(-1*$scale, 10*$scale)/10;
+          $dx = mt_rand(-1*$scale, $scale)/10;
           $wiggle = mt_rand(-$dispersion,$dispersion)/10;
           $x = $x+$dx;
           $this->yArr[] = $coeff*pow($base,($x+$wiggle));
@@ -76,16 +76,16 @@
         *
         *
       */
-      public function genLogarithmic($coeff, $c=0) {
+      public function genLogarithmic($coeff, $c=0, $scale=1) {
         $this->xArr = array(); #Clear any current data.
         $this->yArr = array();
         $x=1;
         for ($i=0; $i < $this->len; $i++){
           $this->xArr[]=$x;
-          $dx = mt_rand(-1*$scale, 10*$scale)/10;
+          $dx = mt_rand(-3*$scale, 5*$scale)/10;
           $wiggle = mt_rand(-$dispersion,$dispersion)/10;
-          $x = max($x+$dx,1);
-          $xw = max($x+$wiggle,1);
+          $x = max($x+$dx,.1);
+          $xw = max($x+$wiggle,.1);
           $this->yArr[] = $coeff*log($xw)+$c;
         }
       }

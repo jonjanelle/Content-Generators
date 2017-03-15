@@ -24,6 +24,9 @@ function tableToJson(table){
   return resultArray;
 }
 
+/**
+Wrapper function for an AmCharts.makeChart scatter plot
+*/
 function createScatterPlot(tableData) {
   var xLab = Object.keys(tableData[0])[0];
   var yLab = Object.keys(tableData[0])[1];

@@ -3,7 +3,7 @@ FORM STYLES
 */
 #main_form {
   width: auto;
-  height: 100vh;
+  height: 110vh;
   float: left;
   margin: 0 auto;
   background-color: #FAFAFF;
@@ -62,11 +62,10 @@ th {
 }
 
 #table-container {
-  float: left;
-  margin-left: 5%;
-  margin-top: 10vh;
-  width: 30%;
-  height: 70vh;
+  margin: 0 auto;
+  margin-top: 5vh;
+  width: 40%;
+  height: 45vh;
   overflow-y:auto;
   margin: 1px solid #DDDDDD;
 }
@@ -79,10 +78,14 @@ th {
 Chart styles
 */
 #chartdiv {
-  float: left;
-  margin-top: 10vh;
-  margin-left:5%;
-  width: 30%;
-  height: 70vh;
+  margin: 0 auto;
+  width: 50%;
+  height: 45vh;
   background-color: #FFFFFF;
+}
+.col {
+  margin: 0 auto;
+  margin-top: 5vh;
+  text-align: center;
+  font-weight: bold;
 }

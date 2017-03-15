@@ -21,10 +21,11 @@
     <div class="form-body">
       <div class="form-row">
         <label for="pattern-type">Pattern Type</label>
-        <select class="form-control" id="pattern-type">
+        <select class="form-control" id="pattern-type" name="pattern-type">
           <option value="linear">Linear</option>
           <option value="quadratic">Quadratic</option>
           <option value="exponential">Exponential</option>
+          <option value="exponential">Logarithmic</option>
         </select>
       </div>
 
@@ -42,27 +43,32 @@
     </div>
     <button type="submit" id="submit-button" class="btn btn-primary btn-lg">Generate!</button>
   </form>
-
-  <div id="table-container">
-    <table id="main-table" class="table table-bordered table-condensed table-responsive table-striped">
-      <thead>
-        <tr class="info">
-          <th>{{$xHead}}</th>
-          <th>{{$yHead}}</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach ($data as $point)
-          <tr>
-            <td>{{$point['x']}}</td>
-            <td>{{$point['y']}}</td>
-          </tr>
-        @endforeach
-      </tbody>
-    </table>
+  <div class="row">
+    <div class="col">
+      <div id="table-container">
+        <table id="main-table" class="table table-bordered table-condensed table-responsive table-striped">
+          <thead>
+            <tr class="info">
+              <th>{{$xHead}}</th>
+              <th>{{$yHead}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($data as $point)
+              <tr>
+                <td>{{$point['x']}}</td>
+                <td>{{$point['y']}}</td>
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <div class="col">
+    {{$yHead}}  vs. {{$xHead}}
+    <div id="chartdiv" ></div>
   </div>
-
-  <div id="chartdiv" ></div>
+</div>
 @endsection
 
 @push('body')

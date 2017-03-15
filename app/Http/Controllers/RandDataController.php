@@ -19,9 +19,24 @@
       $nPoints = $request->input("n-points"); //number of points
       $data1 = new RandData($nPoints);
 
-      $type = $request->input(""); 
-
-      $data1->genLinear(3,40,1.5);
+      $type = $request->input("pattern-type");
+      if ($type == "linear"){
+        $data1->genLinear(3,40,1.5);
+      } else if ($type == "quadratic"){
+        $data1->genQuadratic(1,2,3,5,1);
+      } else if ($type == "exponential") {
+        $data1->genExponential(1, 2, 5, 1);
+      }
+      else if ($type == "logarithmic"){
+        $data1->genLogarithmic(2);
+      }
+      $labels = $request->input("col-labels");
+      $xHead ="X";
+      $yHead ="Y";
+      if ($labels != null) {
+        $xHead ="Xtest";
+        $yHead ="Ytest";
+      }
 
       $xVals = $data1->getXArr();
       $yVals = $data1->getYArr();
@@ -33,7 +48,7 @@
       $data1=json_encode($data);
 
       return view('data')->with(['data'=>$data,
-                                 'xHead'=>'Xs',
-                                 'yHead'=>'Ys']);
+                                 'xHead'=>$xHead,
+                                 'yHead'=>$yHead]);
     }
 }
