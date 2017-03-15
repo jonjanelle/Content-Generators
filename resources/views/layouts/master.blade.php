@@ -36,7 +36,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Filler Content Generator</a>
+          <a class="navbar-brand" id="navbar-header" href="/">Filler Content Generator</a>
         </div>
 
         <div id="navbar" class="navbar-collapse collapse">

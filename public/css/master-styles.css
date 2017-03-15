@@ -5,6 +5,12 @@ body {
   height: 100%;
 }
 
+#navbar-header {
+  font-weight: bold;
+  color: #000099;
+  letter-spacing: 3px;
+}
+
 .nav-text{
   font-weight: bold;
   font-size:1.2em;
