@@ -19,6 +19,7 @@ class LoremTextController extends Controller {
       $sentDev = $request->input("word_dev"); //max absolute deviation from average sentence length
       $lorem = false;
       $headers = false;
+      /*
       $punct = $request->input("punct_sentences");
       if ($punct == "periods"){
         $punct = ["."];
@@ -27,14 +28,16 @@ class LoremTextController extends Controller {
       } else {
         $punct = ["."];
       }
+      */
       if ($request->input("par_headers")!==null) { $headers = true; }
       if ($request->input("lorem_first")!==null){ $lorem = true; }
 
       $loremText = array(); //Each entry is one paragraph.
       for ($i=0; $i<$numPara; $i++) { //Each iteration generates new paragraph
         $loremText[] = $words->getParagraph($paraLen, $paraDev, $sentLen,
-                                            $sentDev, $headers, $punct);
+                                            $sentDev, $headers);
       }
+      //If "make first sentence lorem ipsum" box checkeds
       if ($lorem){
         $loremText[0]['body']="Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit. ".$loremText[0]['body'];

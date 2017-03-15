@@ -20,7 +20,7 @@
       $this->fileName = $fileName;
 
       //File in public disk. Created symbollic link with php artisan storage:link
-      $fh=fopen(asset("storage\word_list.csv"), "r") or die("Unable to open file.");
+      $fh=fopen(asset("storage/word_list.csv"), "r") or die("Unable to open file.");
       $this->wordList = array();
       while (!feof($fh)) {
         array_push($this->wordList,trim(fgets($fh))); //add all words to array
@@ -37,7 +37,7 @@
     // $sLen : int average number of words per sentence
     // $devS : int max absolute deviation from words per sentence
     */
-    function getParagraph($spp, $devP, $sLen, $devS, $headers,$punct) {
+    function getParagraph($spp, $devP, $sLen, $devS, $headers) {
       if ($headers) {
         $paragraph = array();
         $head ="";
@@ -56,7 +56,7 @@
       $body = "";
       $spp=$spp + rand(-$devP, $devP);
       for ($j=0; $j<$spp; $j++) { //sentences per paragraph loop
-        $body.=$this->getSentence($sLen, $devS,$punct);
+        $body.=$this->getSentence($sLen, $devS);
       }
       $paragraph['body'] = $body;
       return $paragraph;
@@ -67,7 +67,7 @@
     * $sLen : int average number of words per sentence
     * $devS : int max absolute deviation from words per sentence
     */
-    function getSentence($sLen, $devS, $punct){
+    function getSentence($sLen, $devS){
       $sentence = "";
       //generate new length for next sentence within deviation bounds
       $sLen=$sLen + rand(-$devS,$devS);
