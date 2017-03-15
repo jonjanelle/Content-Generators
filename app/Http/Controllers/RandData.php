@@ -76,17 +76,16 @@
         *
         *
       */
-      public function genLogarithmic($coeff, $c=0, $scale=1) {
+      public function genLogarithmic($coeff, $c=0, $dispersion=5, $scale=1) {
         $this->xArr = array(); #Clear any current data.
         $this->yArr = array();
         $x=1;
         for ($i=0; $i < $this->len; $i++){
           $this->xArr[]=$x;
-          $dx = mt_rand(-3*$scale, 5*$scale)/10;
-          $wiggle = mt_rand(-$dispersion,$dispersion)/10;
-          $x = max($x+$dx,.1);
-          $xw = max($x+$wiggle,.1);
-          $this->yArr[] = $coeff*log($xw)+$c;
+          $dx = mt_rand(0,20*$scale)/10;
+          $wiggle = mt_rand(0,$dispersion)/10;
+          $x = $x+$dx;
+          $this->yArr[] = $coeff*log10($xw)+$c;
         }
       }
 

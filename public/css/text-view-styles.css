@@ -20,7 +20,6 @@
   margin-bottom: 10px;
   background-color: #FAFAFF;
   text-align: center;
-  border: 2px solid #AAAABF;
 }
 
 #open-form {
@@ -39,7 +38,7 @@
   letter-spacing: 5px;
   background-color: #555555;
   color: #F5F5F5;
-  border-bottom: 2px solid #BABACF;
+  border-bottom: 1px solid #BABACF;
 }
 
 .form-section-title {
@@ -73,7 +72,7 @@
   letter-spacing: 4px;
   font-weight: bold;
   background-color: #DADAFF;
-  border: 1px solid;
+  border: 1px solid #555;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
