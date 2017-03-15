@@ -1,0 +1,91 @@
+#container {
+  margin: 0 auto;
+  width: 90%;
+  height: 100%;
+  padding: 30px 0 30px 0;
+  background-color: #ff9d00;
+}
+
+#menu-div {
+  width: 100%;
+  margin: 10px 20px 20px 20px;
+}
+
+#title {
+  padding: 20px;
+  color: #30Beff;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+#titlebar {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #111;
+  opacity: .8;
+}
+
+#select-title{
+  font-style: italic;
+  font-weight: bold;
+  display: block;
+}
+
+.card-icon{
+  font-size: 4em;
+}
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+.blue {
+  color: blue;
+}
+
+.app-card {
+  min-height: 40vh;
+  padding: 0 0 20px 0;
+  margin: 0 10px 10px 10px;
+  background-color: #F5F5FF;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.app-card:hover {
+  box-shadow: none;
+}
+
+.app-card-header {
+  background-color: #555555;
+  color: white;
+  min-height: 50px;
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+}
+
+.card-text {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1.2em;
+}

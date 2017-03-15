@@ -1,0 +1,76 @@
+#container {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+input[type='radio']{
+  visibility: hidden;
+}
+
+#main-form {
+  float:left;
+  width:40vw;
+  margin-left: 5vw;
+  border-radius: 10px;
+  padding: 2%;
+  text-align: center;
+  overflow: auto;
+  opacity: .7;
+  background-color: #F5F5FF;
+  border: 2px solid #CFCAFF;
+}
+
+#main-form>h2 {
+  color: black;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+#color-input{
+  width: 50%;
+}
+
+#color-input:hover {
+  background-color: #909CA0;
+}
+
+#color-input:focus {
+  background-color: #909CA0;
+}
+
+#button-div {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
+#main-button, #reset-button {
+  width: 40%;
+}
+
+#output-div {
+  float: right;
+  margin-right: 5vw;
+  width: 40vw;
+  height: 60vh;
+  border: 1px solid black;
+  overflow-y: scroll;
+}
+
+.out-box {
+  margin: 0 auto;
+  width: 30%;
+  height: 10vh;
+  border: 1px solid black;
+}
+
+.radio{
+  width: 60%;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 1.1em;
+}

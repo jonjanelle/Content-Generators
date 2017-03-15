@@ -1,0 +1,31 @@
+#data-table {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+#data-table th, td {
+  text-align: center;
+}
+
+
+#data-table tr {
+  background-color: #F9F9FF;
+  border: 2px solid black;
+}
+
+.table-container {
+  overflow: auto;
+  overflow-y: scroll;
+  position: relative;
+  width: auto;
+  max-width: 30%;
+  max-height: 300px;
+  border: 2px solid black;
+  border-radius: 5px;
+
+}
+
+.table-container:hover {
+  box-shadow: 5px 5px 15px 0px rgba(100,100,100,.7);
+}
