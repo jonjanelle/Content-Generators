@@ -64,6 +64,17 @@ function createScatterPlot(tableData) {
   });
 }
 
+/*
+ * Update the innerHTML of the target_id to the value of source_id
+ */
+function sliderTextUpdate(source_id, target_id) {
+  console.log(source_id);
+  var source = document.getElementById(source_id);
+  var target = document.getElementById(target_id);
+  target.innerHTML=source.value;
+}
+
+
 //Draw a scatter plot if data has been generated
 var table = document.getElementById('main-table');
 if (table.rows.length>0){

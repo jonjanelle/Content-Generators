@@ -12,7 +12,6 @@
       private $xArr=array();
       private $yArr=array();
       private $len=0;
-      public $coeff;
 
       function __construct($count) {
         $this->len = $count;
@@ -30,7 +29,7 @@
         $x = 0;
         for ($i=0; $i < $this->len; $i++){
           $this->xArr[]=$x; //better than array_push. avoids function call overhead.
-          $dx = mt_rand(-1*$scale, 10*$scale)/10; //Generate random -scale/10 to scale change in x
+          $dx = mt_rand(-$scale, 10*$scale)/10; //Generate random -scale/10 to scale change in x
           $wiggle = mt_rand(-$dispersion,$dispersion)/10;
           $x = $x+$dx;
           $this->yArr[] = ($x+$wiggle)*$slope;
@@ -47,7 +46,7 @@
         $x=0;
         for ($i=0; $i < $this->len; $i++){
           $this->xArr[]=$x;
-          $dx = mt_rand(-1*$scale, $scale)/10;
+          $dx = mt_rand(1, 10*$scale)/100;
           $wiggle = mt_rand(-$dispersion,$dispersion)/10;
           $x = $x+$dx;
           $this->yArr[] = $coeff*pow($base,($x+$wiggle));
@@ -64,7 +63,7 @@
         $x=0;
         for ($i=0; $i < $this->len; $i++){
           $this->xArr[]=$x;
-          $dx = mt_rand(-1*$scale, 10*$scale)/10;
+          $dx = mt_rand(-$scale, 10*$scale)/10;
           $wiggle = mt_rand(-$dispersion,$dispersion)/10;
           $x = $x+$dx;
           $xw = $x+$wiggle;
@@ -82,7 +81,7 @@
         $x=1;
         for ($i=0; $i < $this->len; $i++){
           $this->xArr[]=$x;
-          $dx = mt_rand(0,20*$scale)/10;
+          $dx = mt_rand(0,10*$scale)/10;
           $wiggle = mt_rand(0,$dispersion)/10;
           $x = $x+$dx;
           $this->yArr[] = $coeff*log10($xw)+$c;

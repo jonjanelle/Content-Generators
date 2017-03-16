@@ -12,31 +12,46 @@
       $data = [['x'=>0, 'y'=>0]];
       return view('data')->with(['data'=>$data,
                                  'xHead'=>'X',
-                                 'yHead'=>'Y']);
+                                 'yHead'=>'Y',
+                                 'nPoints'=>10,
+                                 'randhead'=>"unchecked",
+                                 'dispersion'=>5,
+                                 'coeff'=>1]);
     }
 
     public function show(Request $request) {
       $nPoints = $request->input("n-points"); //number of points
       $data1 = new RandData($nPoints);
-
+      $dispersion = $request->input("dispersion");
+      $coeff = $request->input("coeff");
       $type = $request->input("pattern-type");
       if ($type == "linear"){
-        $data1->genLinear(3,40,1.5);
+        $data1->genLinear($coeff,$dispersion,1);
       } else if ($type == "quadratic"){
-        $data1->genQuadratic(1,2,3,5,1);
+        $data1->genQuadratic($coeff,random_int(-10,10),random_int(-20,20),$dispersion,1);
       } else if ($type == "exponential") {
-        $data1->genExponential(1, 2, 5, 1);
+        $data1->genExponential($coeff, random_int(2,10), $dispersion, 1);
       }
       else if ($type == "logarithmic"){
-        $data1->genLogarithmic(2);
+        $data1->genLogarithmic($coeff);
       }
       $labels = $request->input("col-labels");
       $xHead ="X";
       $yHead ="Y";
+      $randhead = "unckecked";
       if ($labels != null) {
-        $xHead ="Xtest";
-        $yHead ="Ytest";
+        $labels = ["height", "cholesterol", "smugness", "cupcakes", "smoothness",
+                   "moon opacity", "loudness", "nostril radius", "eyebrow tension", "heart rate",
+                   "belligerence", "snowfall", "temperature", "time", "strength",
+                   "speed", "charisma", "intelligence", "bushels", "swimming pools",
+                   "ice cream", "cats", "apples", "cheese consumption", "divorce rate",
+                   "noodle thefts", "bicycles", "unicorns", "fire hydrants", "paperclips",
+                   "broccoli deaths", "lemurs", "light intensity", "torque"];
+        $xHead = $labels[array_rand($labels)];
+        $yHead = $labels[array_rand($labels)];
+        $randhead = "checked";
       }
+
 
       $xVals = $data1->getXArr();
       $yVals = $data1->getYArr();
@@ -48,7 +63,11 @@
       $data1=json_encode($data);
 
       return view('data')->with(['data'=>$data,
-                                 'xHead'=>$xHead,
-                                 'yHead'=>$yHead]);
+                                 'xHead'=>ucfirst($xHead),
+                                 'yHead'=>ucfirst($yHead),
+                                 'nPoints'=>$nPoints,
+                                 'randhead'=>$randhead,
+                                 'dispersion'=>$dispersion,
+                                 'coeff'=>$coeff]);
     }
 }

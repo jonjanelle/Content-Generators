@@ -31,14 +31,24 @@
 
       <div class="form-row">
         <label>Number of Points</label>
-        <input type="number" class="form-control" name="n-points" value="10">
+        <input type="number" class="form-control" name="n-points" value="{{$nPoints}}">
       </div>
 
       <div class="form-row">
-        <input type="checkbox" id="rand-check" class="form-check-input-lg" name="col-labels">
+        <input type="checkbox" id="rand-check" class="form-check-input-lg" name="col-labels" {{$randhead}}>
         <label class="form-check-label" for="rand-check">
           Random column labels?
         </label>
+      </div>
+      <div class="form-row">
+        <label for="range-d">Dispersion: <span id="disp-val"></span></label>
+          <input type="range" class="form-control range-slider" id="range-d" name="dispersion" min="0" max="40" step="1" value="{{$dispersion}}" onchange="sliderTextUpdate('range-d','disp-val')">
+      </div>
+
+      <div class="form-row">
+        <label for="range-c">Coefficient: <span id="coeff-val"></span></label>
+          <input type="range" class="form-control range-slider" id="range-c" name="coeff" min="-10" max="10" step=".5" value="{{$coeff}}" onchange="sliderTextUpdate('range-c','coeff-val')">
+
       </div>
     </div>
     <button type="submit" id="submit-button" class="btn btn-primary btn-lg">Generate!</button>
