@@ -51,5 +51,6 @@
 
     @yield('content')
     @stack('body')
+    
   </body>
 </html>
