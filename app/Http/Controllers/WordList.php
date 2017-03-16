@@ -17,7 +17,7 @@
     */
     function __construct($fileName) {
       //Figuring out how to make the next two lines work took WAY too long...
-      $path = storage_path('app/public/'.$fileName); 
+      $path = storage_path('app/public/'.$fileName);
       $fh=fopen($path, "r") or die("Unable to open file.");
       $this->wordList =array();
       while (!feof($fh)) {
