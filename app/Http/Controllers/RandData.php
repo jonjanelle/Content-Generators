@@ -47,7 +47,7 @@
         for ($i=0; $i < $this->len; $i++){
           $this->xArr[]=$x;
           $dx = mt_rand(1, 10*$scale)/100;
-          $wiggle = mt_rand(-$dispersion,$dispersion)/10;
+          $wiggle = mt_rand(-$dispersion,$dispersion)/100;
           $x = $x+$dx;
           $this->yArr[] = $coeff*pow($base,($x+$wiggle));
         }
@@ -82,8 +82,9 @@
         for ($i=0; $i < $this->len; $i++){
           $this->xArr[]=$x;
           $dx = mt_rand(0,10*$scale)/10;
-          $wiggle = mt_rand(0,$dispersion)/10;
+          $wiggle = mt_rand(-$dispersion,$dispersion)/10;
           $x = $x+$dx;
+          $xw = max($x+$wiggle,.1);
           $this->yArr[] = $coeff*log10($xw)+$c;
         }
       }

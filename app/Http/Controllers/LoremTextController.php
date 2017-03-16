@@ -3,10 +3,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class LoremTextController extends Controller {
-
+    private $checkText = [false=>"unchecked", true=>"checked"];
     public function index() {
       return view('text')->with(['loremText'=>array(),
-                                 'display'=>'none']);
+                                 'display'=>'none',
+                                 'numPara'=>4,
+                                 'paraLen'=>7,
+                                 'paraDev'=>2,
+                                 'sentLen'=>8,
+                                 'sentDev'=>3,
+                                 'pHeaders'=> $this->checkText[true],
+                                 'beginLorem'=>$this->checkText[true]
+                               ]);
     }
 
     public function show(Request $request) {
@@ -31,8 +39,14 @@ class LoremTextController extends Controller {
 
       $headers = false;
       $lorem = false;
-      if ($request->input("par_headers")!==null) { $headers = true; }
-      if ($request->input("lorem_first")!==null){ $lorem = true; }
+      if ($request->input("par_headers")!==null) {
+        $headers = true;
+        $pHeaders="checked";
+      }
+      if ($request->input("lorem_first")!==null){
+        $lorem = true;
+        $beginLorem="checked";
+      }
 
       $loremText = array(); //Each entry is one paragraph.
       for ($i=0; $i<$numPara; $i++) { //Each iteration generates new paragraph
@@ -46,7 +60,14 @@ class LoremTextController extends Controller {
       }
       return view('text')->with(['loremText'=>$loremText,
                                  'headers'=>$headers,
-                                  'display'=>'inline']);
+                                 'display'=>'inline',
+                                 'numPara'=>$numPara,
+                                 'paraLen'=>$paraLen,
+                                 'paraDev'=>$paraDev,
+                                 'sentLen'=>$sentLen,
+                                 'sentDev'=>$sentDev,
+                                 'pHeaders'=>$this->checkText[$headers],
+                                 'beginLorem'=>$this->checkText[$lorem]]);
     }
 
 }

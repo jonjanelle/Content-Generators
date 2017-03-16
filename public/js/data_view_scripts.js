@@ -74,6 +74,16 @@ function sliderTextUpdate(source_id, target_id) {
   target.innerHTML=source.value;
 }
 
+function setPatternType(optionsId, selectedName)
+{
+    var options = document.getElementById(optionsId);
+    for (var i = 0; i < options.options.length; i++){
+      if (options.options[i]==selectedName){
+        options.options[i].setAttribute("selected","true");
+      }
+    }
+}
+
 
 //Draw a scatter plot if data has been generated
 var table = document.getElementById('main-table');

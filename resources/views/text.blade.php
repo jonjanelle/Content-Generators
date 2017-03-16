@@ -22,25 +22,25 @@
       <div class="row">
         <div class="col col-md-6">
           <label>Number of paragraphs:</label>
-          <input type="number" class="form-control" name="num_para" value="4">
+          <input type="number" class="form-control" name="num_para" value="{{$numPara}}">
         </div>
         <div class="col col-md-6">
           <label>Average sentences per paragraph:</label>
-          <input type="number" class="form-control" name="num_sent" value="7">
+          <input type="number" class="form-control" name="num_sent" value="{{$paraLen}}">
         </div>
 
         <div class="col col-md-6">
           <label>Max deviation from average sentences per paragraph: </label>
-          <input type="number" class="form-control" name="sent_dev" value="2">
+          <input type="number" class="form-control" name="sent_dev" value="{{$paraDev}}">
         </div>
 
         <div class="col col-md-6">
           <label>Average number of words per sentence:</label>
-          <input type="number" class="form-control" name="num_words" value="12">
+          <input type="number" class="form-control" name="num_words" value="{{$sentLen}}">
         </div>
         <div class="col col-md-6">
           <label>Max deviation from average words per sentence:</label>
-          <input type="number" class="form-control" name="word_dev" value="4">
+          <input type="number" class="form-control" name="word_dev" value="{{$sentDev}}">
         </div>
       </div>
 
@@ -56,10 +56,16 @@
           </label>
         </div>
         <div class="col col-md-4">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input" name="par_headers"> Include paragraph headers?</label>
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="par_headers" {{$pHeaders}}>
+            Include paragraph headers?
+          </label>
         </div>
         <div class="col col-md-4">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input" name="lorem_first"> Begin with Lorem ipsum?</label>
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="lorem_first" {{$beginLorem}} >
+            Begin with Lorem ipsum?
+          </label>
         </div>
       </div>
       <button type="submit" id="submit-button" class="btn btn-primary btn-lg">Generate!</button>

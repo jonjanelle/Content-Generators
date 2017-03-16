@@ -16,7 +16,8 @@
                                  'nPoints'=>10,
                                  'randhead'=>"unchecked",
                                  'dispersion'=>5,
-                                 'coeff'=>1]);
+                                 'coeff'=>1,
+                                 'type'=>'linear']);
     }
 
     public function show(Request $request) {
@@ -43,10 +44,11 @@
         $labels = ["height", "cholesterol", "smugness", "cupcakes", "smoothness",
                    "moon opacity", "loudness", "nostril radius", "eyebrow tension", "heart rate",
                    "belligerence", "snowfall", "temperature", "time", "strength",
-                   "speed", "charisma", "intelligence", "bushels", "swimming pools",
+                   "speed", "charisma", "intelligence", "tenacity", "swimming pools",
                    "ice cream", "cats", "apples", "cheese consumption", "divorce rate",
                    "noodle thefts", "bicycles", "unicorns", "fire hydrants", "paperclips",
-                   "broccoli deaths", "lemurs", "light intensity", "torque"];
+                   "broccoli deaths", "lemurs", "light intensity", "torque", "viscosity",
+                   "marbles eaten", "flying squirrels", "night sweating"];
         $xHead = $labels[array_rand($labels)];
         $yHead = $labels[array_rand($labels)];
         $randhead = "checked";
@@ -68,6 +70,7 @@
                                  'nPoints'=>$nPoints,
                                  'randhead'=>$randhead,
                                  'dispersion'=>$dispersion,
-                                 'coeff'=>$coeff]);
+                                 'coeff'=>$coeff,
+                                 'type'=>$type]);
     }
 }

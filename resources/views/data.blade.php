@@ -25,7 +25,7 @@
           <option value="linear">Linear</option>
           <option value="quadratic">Quadratic</option>
           <option value="exponential">Exponential</option>
-          <option value="exponential">Logarithmic</option>
+          <option value="logarithmic">Logarithmic</option>
         </select>
       </div>
 
@@ -42,7 +42,7 @@
       </div>
       <div class="form-row">
         <label for="range-d">Dispersion: <span id="disp-val"></span></label>
-          <input type="range" class="form-control range-slider" id="range-d" name="dispersion" min="0" max="40" step="1" value="{{$dispersion}}" onchange="sliderTextUpdate('range-d','disp-val')">
+          <input type="range" class="form-control range-slider" id="range-d" name="dispersion" min="0" max="50" step="1" value="{{$dispersion}}" onchange="sliderTextUpdate('range-d','disp-val')">
       </div>
 
       <div class="form-row">
