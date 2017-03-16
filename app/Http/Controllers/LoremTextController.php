@@ -18,7 +18,7 @@ class LoremTextController extends Controller {
     }
 
     public function show(Request $request) {
-      $words = new WordList("storage/word_list.csv"); //File assumed to be in /storage
+      $words = new WordList("word_list.csv"); // in storage/app/public
 
       //Get paragraph stat inputs.
       $numPara = $request->input("num_para"); //number of paragraphs

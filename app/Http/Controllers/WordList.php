@@ -16,16 +16,16 @@
     //             Each line is assumed to contain one word.
     */
     function __construct($fileName) {
-      //File in storage/public disk. Created symbollic link with php artisan storage:link
-      /*
-      $fh=fopen(asset($fileName), "r") or die("Unable to open file.");
+      //Figuring out how to make the next two lines work took WAY too long...
+      $path = storage_path('app/public/'.$fileName); 
+      $fh=fopen($path, "r") or die("Unable to open file.");
       $this->wordList =array();
       while (!feof($fh)) {
         $this->wordList[] = trim(fgets($fh));
         array_push($this->wordList,trim(fgets($fh))); //add all words to array
       }
-      */
-      $this->wordList =array("blah","blah","blah");
+
+      //$this->wordList =array("blah","blah","blah");
       //length is total number of words in wordList
       $this->length = count($this->wordList);
     }
