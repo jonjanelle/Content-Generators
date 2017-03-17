@@ -13,7 +13,7 @@
     <div id="open-form" class="alert alert-info shadowbox">
       Click to show/hide menu
     </div>
-    <form class="form-top-round" method="GET" action="/textsubmit">
+    <form id="main_form" class="form-top-round" method="GET" action="/textsubmit">
       <div class="form-header">
         Lorem Ipsum Text Generator
       </div>
