@@ -117,21 +117,23 @@ input[type='radio']{
 
 /*Stylings for radio buttons and their group*/
 .radio{
-
   margin: 0 auto;
-
+  text-align: center;
+  padding: 5px 5px 5px 0;
   font-weight: bold;
-  font-size: .9em;
 }
+
 
 .radio:active{
   background-color: green;
 }
+
 #radio-div{
   margin: 0 auto;
-  max-width: 90%;
+  max-width: 95%;
   overflow: hidden;
 }
+
 .btn.active, .btn:active {
   border: 2px inset #0085DF;
     font-weight: bolder;

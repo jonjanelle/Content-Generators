@@ -24,18 +24,18 @@
         <div class="form-section-title">Palette Type</div>
         <div class="btn-group" data-toggle="buttons">
           <div class="col col-md-12">
-            <div class="radio btn btn-primary center-block">
-                <label><input type="radio" name="palette-type" value="triadic">Triadic</label>
+            <div class="radio btn btn-primary center-block active">
+                <label>Triadic<input type="radio" name="palette-type" value="triadic" checked="checked"></label>
             </div>
           </div>
           <div class="col col-md-12">
             <div class="radio btn btn-primary center-block">
-              <label><input type="radio" name="palette-type" value="comp">Complementary</label>
+              <label>Complementary<input type="radio" name="palette-type" value="comp"></label>
             </div>
           </div>
           <div class="col col-md-12">
             <div class="radio btn btn-primary center-block">
-              <label><input type="radio" name="palette-type" value="split-comp">Split-Complementary</label>
+              <label>Split-Complementary<input type="radio" name="palette-type" value="split-comp"></label>
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@
           <div class="row center-block result-row">
             <div class="result-row-header">
               Base Color: {{$base}}&nbsp;&nbsp;
-              Type: Blah blah blah</div>
+              Type: {{$type}}</div>
           @foreach ($result as $c)
             <div class="col-xs-3 out-box" style="background-color:{{$c}}">
               <div class="out-shade">

@@ -11,11 +11,10 @@
     */
     public function index(){
       $_SESSION['results']=array();
-      $color = array("#00FF00");
-      $results = array();
-      return view('color')->with(['color'=> $color,
-                                  'results'=> $results,
-                                  'base'=>"#00FF00"]);
+      return view('color')->with(['color'=> ["#00FF00"],
+                                  'results'=>[],
+                                  'base'=>"#00FF00",
+                                  'type'=>""]);
     }
 
     /**
@@ -28,21 +27,29 @@
       }
       $palette = new ColorPalette($request->input('base-color'));
       $type = $request->input('palette-type');
+
       $color = array();
       if ($type=="triadic") {
         $color=$palette->getTriadic();
+        $type="Triadic";
       }
       else if ($type=="comp"){
         $color=$palette->getComplementary();
+        $type="Complementary";
       }
       else if ($type=="split-comp"){
         $color = $palette->getSplitComp();
+        $type="Split Complementary";
       }
-      array_push($_SESSION['results'],$color);
+
+
+      //push to front so newest appears on top
+      array_unshift($_SESSION['results'],$color);
       $results = $_SESSION['results'];
       //will need to rethink the chaining approach.
       return view('color')->with(['color'=>$color,
                                   'results'=>$results,
-                                  'base'=>$palette->getBaseColor()]);
+                                  'base'=>$palette->getBaseColor(),
+                                  'type'=>$type]);
     }
   }
