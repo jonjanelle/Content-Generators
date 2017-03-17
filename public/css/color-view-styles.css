@@ -1,13 +1,19 @@
+input[type='radio']{
+  visibility: hidden;
+}
+
+#button-div {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
 #container {
   height: 100%;
   margin: 0;
   padding: 0;
 }
-
-input[type='radio']{
-  visibility: hidden;
-}
-
 
 #color-input{
   width: 50%;
@@ -21,47 +27,110 @@ input[type='radio']{
   background-color: #909CA0;
 }
 
-#button-div {
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 1em;
-}
-
 #main-button, #reset-button {
-  width: 40%;
+  width: 35%;
 }
 
-#output-div {
-  float: right;
-  margin-right: 5vw;
-  width: 40vw;
-  height: 60vh;
-  border: 1px solid black;
+
+/* outer result area div */
+#result-div{
+    width: 61%;
+    margin: 10px 2% 0 2%;
+    float: right;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#result-content {
+  width: 100%;
+  max-height: 80vh;
+  border: 1px solid #DFDFFF;
   overflow-y: scroll;
 }
 
-.form-header {
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+#result-label {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 10px 10px 0 0;
+  padding: 5px;
+  margin: 0;
 }
 
-.form-section-title {
-  margin-top: 20px;
-  margin-bottom: 20px;
+.result-row {
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.result-row-header {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-size: .8em;
+  font-weight: bold;
+  color: #2F2F8F;
+}
+
+.out-shade {
+  width: 100%;
+  height: 1.5em;
+  margin: 0 auto;
+  border-radius: 0 0 5px 5px;
+  background-color: rgba(50,50,50,.75);
+  color: white;
+  font-weight: bold;
+  font-size: .8em;
+  text-align: center;
+
 }
 
 .out-box {
   margin: 0 auto;
-  width: 30%;
+  margin-right: 1%;
+  width: 32%;
   height: 10vh;
   border: 1px solid black;
 }
+/*End result area related*/
 
-.radio{
+/*Form body and heading stylings*/
+.form-top-round {
+  max-width: 35%;
+  float: left;
+}
+
+.form-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.form-section-title {
+  font-size: 1.2em;
+}
+
+#output-format {
+  margin: 0 auto;
   width: 60%;
+}
+
+/*Stylings for radio buttons and their group*/
+.radio{
   text-align: center;
+  margin: 0 auto;
   overflow: hidden;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1em;
+}
+.radio:active{
+  background-color: green;
+}
+#radio-div{
+  margin: 0 auto;
+  max-width: 85%;
+  overflow: hidden;
+}
+.btn.active, .btn:active {
+  border: 2px inset #0085DF;
+    font-weight: bolder;
 }

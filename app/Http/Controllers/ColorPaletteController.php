@@ -14,7 +14,8 @@
       $color = array("#00FF00");
       $results = array();
       return view('color')->with(['color'=> $color,
-                                  'results'=> $results]);
+                                  'results'=> $results,
+                                  'base'=>"#00FF00"]);
     }
 
     /**
@@ -27,7 +28,7 @@
       }
       $palette = new ColorPalette($request->input('base-color'));
       $type = $request->input('palette-type');
-      $color = array("#ffffff");
+      $color = array();
       if ($type=="triadic") {
         $color=$palette->getTriadic();
       }
@@ -41,6 +42,7 @@
       $results = $_SESSION['results'];
       //will need to rethink the chaining approach.
       return view('color')->with(['color'=>$color,
-                                  'results'=>$results]);
+                                  'results'=>$results,
+                                  'base'=>$palette->getBaseColor()]);
     }
   }
