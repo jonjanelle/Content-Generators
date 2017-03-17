@@ -31,7 +31,6 @@ input[type='radio']{
   width: 75%;
 }
 
-
 /* outer result area div */
 #result-div{
     width: 56%;
@@ -80,10 +79,9 @@ input[type='radio']{
   border-radius: 0 0 5px 5px;
   background-color: rgba(50,50,50,.75);
   color: white;
-  font-weight: bold;
-  font-size: .8em;
+  font-weight: bolder;
+  font-size: 1em;
   text-align: center;
-
 }
 
 .out-box {
@@ -93,6 +91,13 @@ input[type='radio']{
   height: 10vh;
   border: 1px solid black;
 }
+
+#reset-button {
+  float: right;
+  opacity: .8;
+  border: 0;
+}
+
 /*End result area related*/
 
 /*Form body and heading stylings*/

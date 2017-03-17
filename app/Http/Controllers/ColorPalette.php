@@ -40,8 +40,11 @@ class ColorPalette {
       Convert a hex string to a length 3 array of integer RGB values
       Hex string is assumed to have the format: "#RRGGBB"
     */
-    function hexToRgb(){
-      $hexColor = $this->baseColor;
+    function hexToRgb($color = null){
+      $hexColor = $color;
+      if ($color==null){
+        $hexColor = $this->baseColor;
+      }
 
       $result = array();
       for ($i=0; $i<3; $i++){
@@ -164,7 +167,9 @@ class ColorPalette {
       $base[0] = 255-$base[0]; //get complement of each color channel
       $base[1] = 255-$base[1];
       $base[2] = 255-$base[2];
+
       array_push($compColors, $this->rgbToHex($base));
+
       return $compColors;
     }
 

@@ -57,12 +57,17 @@
   </form>
 
   <div id="result-div" class="light-shadowbox">
-    <div id="result-label" class="alert alert-success">Results</div>
+    <form method="GET" action="/color">
+      <div id="result-label" class="alert alert-success">
+        <input type="submit" class="btn btn-success" id="reset-button" value="Reset">
+        Results
+      </div>
+    </form>
     <div id="result-content">
         @foreach ($results as $result)
           <div class="row center-block result-row">
             <div class="result-row-header">
-              Base Color: {{$base}}&nbsp;&nbsp;
+              Base Color: {{$base}}&nbsp;&nbsp;&nbsp;
               Type: {{$type}}</div>
           @foreach ($result as $c)
             <div class="col-xs-3 out-box" style="background-color:{{$c}}">

@@ -42,7 +42,10 @@
         $type="Split Complementary";
       }
 
-
+      $out_format = $request->input('output-format');
+      if ($out_format=='rgb') {
+        
+      }
       //push to front so newest appears on top
       array_unshift($_SESSION['results'],$color);
       $results = $_SESSION['results'];
