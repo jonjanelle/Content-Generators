@@ -26,3 +26,43 @@ body {
   -moz-box-shadow: -1px 4px 16px 0px rgba(0,0,0,0.75);
   box-shadow: -1px 4px 16px 0px rgba(0,0,0,0.75);
 }
+
+/*
+ * All forms should use consistent formatting
+ */
+.form-header {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 10px 15px 0 15px;
+  letter-spacing: 3px;
+  background-color: #555555;
+  color: #F5F5F5;
+  text-align: center;
+  overflow: hidden;
+}
+
+.form-section-title {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  letter-spacing: 4px;
+  font-weight: bold;
+  color: #3030AF;
+  text-align: center;
+  border-bottom: 1px solid #709070;
+}
+
+.form-top-round {
+  width: 95vw;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-top-right-radius: 11px;
+  border-top-left-radius: 11px;
+  padding: 0 0 20px 0;
+  margin-bottom: 10px;
+  background-color: #FAFAFF;
+  text-align: center;
+  border: 1px solid #ccc;
+}

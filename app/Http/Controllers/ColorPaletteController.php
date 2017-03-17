@@ -13,7 +13,8 @@
       $_SESSION['results']=array();
       $color = array("#00FF00");
       $results = array();
-      return view('color')->with('color', $color)->with('results', $results);
+      return view('color')->with(['color'=> $color,
+                                  'results'=> $results]);
     }
 
     /**
@@ -39,6 +40,7 @@
       array_push($_SESSION['results'],$color);
       $results = $_SESSION['results'];
       //will need to rethink the chaining approach.
-      return view('color')->with('color', $color)->with('results',$results);
+      return view('color')->with(['color'=>$color,
+                                  'results'=>$results]);
     }
   }

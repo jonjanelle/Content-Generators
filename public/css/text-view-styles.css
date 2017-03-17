@@ -11,15 +11,6 @@
 
 #main_form {
   display: none;
-  width: 95vw;
-  margin: 0 auto;
-  margin-top: 10px;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  padding: 0 0 10px 0;
-  margin-bottom: 10px;
-  background-color: #FAFAFF;
-  text-align: center;
 }
 
 #open-form {
@@ -30,67 +21,36 @@
 }
 
 .form-header {
-  font-size: 2em;
-  font-weight: bold;
-  padding: 10px 15px 0 15px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  letter-spacing: 5px;
-  background-color: #555555;
-  color: #F5F5F5;
-  border-bottom: 1px solid #BABACF;
 }
 
 .form-section-title {
-  width: 70%;
-  margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 1.5em;
-  letter-spacing: 4px;
-  font-weight: bold;
-  color: #3030AF;
-  border-bottom: 1px solid #709070;
 }
 
 .row {
   margin: 0 10px 0 10px;
 }
 
-.result-box {
+.result-header {
   width: 90%;
   margin: 0 auto;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-}
-
-.result-header {
-  width: 90%;
-  margin: 0 auto;
   text-align: center;
   font-size: 2.5em;
   letter-spacing: 4px;
   font-weight: bold;
-  background-color: #DADAFF;
-  border: 1px solid #555;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  background-color: #D5D5FF;
+  border: 1px solid #90B0C0;
 }
 
 .result-content {
   width: 90%;
   margin: 0 auto;
-  border-right: 3px solid #476C9B;
-  border-left: 3px solid #476C9B;
-  border-bottom: 3px solid #476C9B;
-  background-color: white;
   padding: 1em;
-}
-
-.header {
-  margin: 0 auto;
-  text-align: center;
-  width: 90%;
-  margin-top: 1em;
-  font-weight: bold;
+  border: 1px solid #90B0C0;
+  border-top: none;
 }

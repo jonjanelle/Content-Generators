@@ -41,12 +41,12 @@
         </label>
       </div>
       <div class="form-row">
-        <label for="range-d">Dispersion: <span id="disp-val"></span></label>
+        <label for="range-d">Dispersion: <span id="disp-val">{{$dispersion}}</span></label>
           <input type="range" class="form-control range-slider" id="range-d" name="dispersion" min="0" max="50" step="1" value="{{$dispersion}}" onchange="sliderTextUpdate('range-d','disp-val')">
       </div>
 
       <div class="form-row">
-        <label for="range-c">Coefficient: <span id="coeff-val"></span></label>
+        <label for="range-c">Coefficient: <span id="coeff-val">{{$coeff}}</span></label>
           <input type="range" class="form-control range-slider" id="range-c" name="coeff" min="-10" max="10" step=".5" value="{{$coeff}}" onchange="sliderTextUpdate('range-c','coeff-val')">
 
       </div>

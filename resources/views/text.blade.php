@@ -13,7 +13,7 @@
     <div id="open-form" class="alert alert-info shadowbox">
       Click to show/hide menu
     </div>
-    <form id="main_form" method="GET" action="/textsubmit">
+    <form class="form-top-round" method="GET" action="/textsubmit">
       <div class="form-header">
         Lorem Ipsum Text Generator
       </div>
@@ -72,7 +72,7 @@
     </form>
 
     <!-- Output area -->
-    <div id="ouput-div" class="result-box shadowbox ui-widget-content" style="display:{{$display}}">
+    <div id="ouput-div" style="display:{{$display}}">
       <div class="result-header">
         Result
       </div>
@@ -88,7 +88,7 @@
       </div>
     </div>
     <!-- End output area -->
-  </div>
+  </div> <!-- End main container -->
 @endsection
 
 @push('body')

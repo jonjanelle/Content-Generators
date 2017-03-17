@@ -13,7 +13,7 @@
       return view('data')->with(['data'=>$data,
                                  'xHead'=>'X',
                                  'yHead'=>'Y',
-                                 'nPoints'=>10,
+                                 'nPoints'=>25,
                                  'randhead'=>"unchecked",
                                  'dispersion'=>5,
                                  'coeff'=>1,
@@ -47,8 +47,11 @@
                    "speed", "charisma", "intelligence", "tenacity", "swimming pools",
                    "ice cream", "cats", "apples", "cheese consumption", "divorce rate",
                    "noodle thefts", "bicycles", "unicorns", "fire hydrants", "paperclips",
-                   "broccoli deaths", "lemurs", "light intensity", "torque", "viscosity",
-                   "marbles eaten", "flying squirrels", "night sweating"];
+                   "broccoli deaths", "lemur anger", "light intensity", "torque",
+                   "viscosity", "marbles eaten", "flying squirrels", "night sweating",
+                   "phone addiction", "vitamin A deficiency","hair length",
+                   "balloon enthusiasm"];
+                   
         $xHead = $labels[array_rand($labels)];
         $yHead = $labels[array_rand($labels)];
         $randhead = "checked";
