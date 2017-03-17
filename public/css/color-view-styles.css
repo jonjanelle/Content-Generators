@@ -34,7 +34,7 @@ input[type='radio']{
 
 /* outer result area div */
 #result-div{
-    width: 61%;
+    width: 56%;
     margin: 10px 2% 0 2%;
     float: right;
     border-top-left-radius: 10px;
@@ -97,7 +97,8 @@ input[type='radio']{
 
 /*Form body and heading stylings*/
 .form-top-round {
-  max-width: 35%;
+  max-width: 40%;
+
   float: left;
 }
 
