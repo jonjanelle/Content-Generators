@@ -53,7 +53,6 @@
 
     <div id="button-div" class="center-block">
       <input type="submit" class="btn btn-info btn-lg" id="main-button" value="Submit">
-      <input type="submit" class="btn btn-warning btn-lg" id="reset-button" value="Reset">
     </div>
   </form>
 

@@ -27,8 +27,8 @@ input[type='radio']{
   background-color: #909CA0;
 }
 
-#main-button, #reset-button {
-  width: 35%;
+#main-button{
+  width: 75%;
 }
 
 
@@ -117,18 +117,19 @@ input[type='radio']{
 
 /*Stylings for radio buttons and their group*/
 .radio{
-  text-align: center;
+
   margin: 0 auto;
-  overflow: hidden;
+
   font-weight: bold;
-  font-size: 1em;
+  font-size: .9em;
 }
+
 .radio:active{
   background-color: green;
 }
 #radio-div{
   margin: 0 auto;
-  max-width: 85%;
+  max-width: 90%;
   overflow: hidden;
 }
 .btn.active, .btn:active {
