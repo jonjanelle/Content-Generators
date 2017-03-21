@@ -24,18 +24,18 @@
         <div class="form-section-title">Palette Type</div>
         <div class="btn-group" data-toggle="buttons">
           <div class="col col-md-12">
-            <div class="radio btn btn-primary center-block active">
-                <label>Triadic<input type="radio" name="palette-type" value="triadic" checked="checked"></label>
+            <div class="radio btn btn-primary center-block {{$type=='Triadic' ? 'active':'' }}">
+                <label>Triadic<input type="radio" name="palette-type" value="triadic" {{$type=='Triadic' ? 'checked="checked"':'' }}></label>
             </div>
           </div>
           <div class="col col-md-12">
-            <div class="radio btn btn-primary center-block">
-              <label>Complementary<input type="radio" name="palette-type" value="comp"></label>
+            <div class="radio btn btn-primary center-block {{$type=='Complementary'?'active':'' }}">
+              <label>Complementary<input type="radio" name="palette-type" value="comp" {{$type=='Complementary' ? 'checked="checked"':''}}></label>
             </div>
           </div>
           <div class="col col-md-12">
-            <div class="radio btn btn-primary center-block">
-              <label>Split-Complementary<input type="radio" name="palette-type" value="split-comp"></label>
+            <div class="radio btn btn-primary center-block {{$type=='Split Complementary'?'active':'' }}">
+              <label>Split-Complementary<input type="radio" name="palette-type" value="split-comp" {{$type=='Split Complementary' ? 'checked="checked"':''}}></label>
             </div>
           </div>
         </div>
@@ -63,6 +63,7 @@
         Results
       </div>
     </form>
+
     <div id="result-content">
         @foreach ($results as $result)
           <div class="row center-block result-row">
@@ -79,6 +80,11 @@
           </div>
         @endforeach
     </div> <!--End output-div-->
+  </div>
+
+  <div id="reference-image">
+    <p>All calculations based on the hex color wheel</p>
+    <img src="images/colorwheel.png">
   </div>
 
 @endsection

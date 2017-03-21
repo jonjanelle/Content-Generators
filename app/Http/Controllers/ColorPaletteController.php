@@ -14,7 +14,7 @@
       return view('color')->with(['color'=> ["#00FF00"],
                                   'results'=>[],
                                   'base'=>"#00FF00",
-                                  'type'=>""]);
+                                  'type'=>"Triadic"]);
     }
 
     /**
@@ -42,17 +42,25 @@
         $type="Split Complementary";
       }
 
-      $out_format = $request->input('output-format');
-      if ($out_format=='rgb') {
-        
-      }
       //push to front so newest appears on top
       array_unshift($_SESSION['results'],$color);
       $results = $_SESSION['results'];
-      //will need to rethink the chaining approach.
+
+      $base = $palette->getBaseColor();
+      $out_format = $request->input('output-format');
+      if ($out_format=='rgb') {
+        //Need to convert all result values to rgb strings.
+        $base = ColorPalette::hexToRgb($base, true);
+        for ($i=0; $i<count($results); $i++){
+          for ($j = 0; $j<count($results[$i]); $j++){
+            $results[$i][$j]=ColorPalette::hexToRgb($results[$i][$j], true);
+          }
+        }
+      }
+
       return view('color')->with(['color'=>$color,
                                   'results'=>$results,
-                                  'base'=>$palette->getBaseColor(),
+                                  'base'=>$base,
                                   'type'=>$type]);
     }
   }

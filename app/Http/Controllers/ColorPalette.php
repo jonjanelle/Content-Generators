@@ -40,17 +40,24 @@ class ColorPalette {
       Convert a hex string to a length 3 array of integer RGB values
       Hex string is assumed to have the format: "#RRGGBB"
     */
-    function hexToRgb($color = null){
-      $hexColor = $color;
-      if ($color==null){
-        $hexColor = $this->baseColor;
+    static function hexToRgb($hexColor, $asString=false){
+      if ( !(is_string($hexColor) &&  //should do regex matching here.
+             strlen($hexColor)==7 &&
+             substr($hexColor,0,1)=="#" ))
+      {
+        return null; //invalid hex string.
       }
 
       $result = array();
       for ($i=0; $i<3; $i++){
         array_push($result,hexdec(substr($hexColor,2*$i+1,2)));
       }
-      return $result;
+
+      if ($asString){
+        return "rgb(".implode(",", $result).")";
+      } else {
+        return $result;
+      }
     }
 
     /*
@@ -76,7 +83,7 @@ class ColorPalette {
     //Most color palettes require degree movements from either the base color
     //or its complement, which makes HSL the best option.
     function getHsl() {
-      $rgb = $this->hexToRgb($this->baseColor);
+      $rgb = ColorPalette::hexToRgb($this->baseColor);
       $r = $rgb[0]/255;
       $g = $rgb[1]/255;
       $b = $rgb[2]/255;
@@ -163,7 +170,7 @@ class ColorPalette {
     */
     function getComplementary() {
       $compColors = [$this->baseColor];
-      $base = $this->hexToRgb($this->baseColor);
+      $base = ColorPalette::hexToRgb($this->baseColor);
       $base[0] = 255-$base[0]; //get complement of each color channel
       $base[1] = 255-$base[1];
       $base[2] = 255-$base[2];

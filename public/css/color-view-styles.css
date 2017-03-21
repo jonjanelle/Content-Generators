@@ -31,6 +31,25 @@ input[type='radio']{
   width: 75%;
 }
 
+#reference-image {
+  z-index: -1;
+  position: absolute;
+  top: 20vh;
+  left: 50vw;
+  margin-right:5vw;
+
+  font-style: italic;
+}
+
+#reference-image>img {
+  max-width:100%;
+  max-height:100%;
+}
+
+#reference-image>p {
+  text-align: center;
+}
+
 /* outer result area div */
 #result-div{
     width: 56%;
@@ -38,6 +57,7 @@ input[type='radio']{
     float: right;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    background-color: white;
 }
 
 #result-content {
