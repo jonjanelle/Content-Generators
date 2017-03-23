@@ -41,16 +41,24 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a class="nav-text" href="/text">Text</a></li>
-            <li><a class="nav-text" href="/data">Data</a></li>
             <li><a class="nav-text" href="/color">Colors</a></li>
+            <li><a class="nav-text" href="/data">Data</a></li>
           </ul>
         </div>
 
       </div>
     </nav>
-
+    @if (count($errors) > 0)
+      <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div>
+    @endif
     @yield('content')
     @stack('body')
-    
+
   </body>
 </html>

@@ -17,7 +17,7 @@
     <div class="form-section-title">Base Color</div>
 
     <div class="row">
-      <input type="color" name="base-color" id="color-input" value="{{$base}}">
+      <input type="color" name="base-color" id="color-input" value="{{$baseHex}}">
     </div>
     <div id="radio-div">
       <div class="row">
@@ -45,9 +45,8 @@
     <div class="form-section-title">Output Format</div>
     <div class="form-row">
       <select class="form-control" id="output-format" name="output-format">
-        <option class="option" value="hex">Hex</option>
-        <option class="option" value="rgb">RGB</option>
-        <option class="option" value="hsl">HSL</option>
+        <option class="option" value="hex" {{$colorFormat=='hex'?'selected':'' }}>Hex</option>
+        <option class="option" value="rgb" {{$colorFormat=='rgb'?'selected':'' }}>RGB</option>
       </select>
     </div>
 
@@ -70,13 +69,15 @@
             <div class="result-row-header">
               Base Color: {{$base}}&nbsp;&nbsp;&nbsp;
               Type: {{$type}}</div>
-          @foreach ($result as $c)
-            <div class="col-xs-3 out-box" style="background-color:{{$c}}">
-              <div class="out-shade">
-                {{$c}}
-              </div>
-            </div>
-          @endforeach
+
+              @foreach ($result as $c)
+                <div class="col-xs-3 out-box" style="background-color:{{$c}}">
+                  <div class="out-shade">
+                    {{$c}}
+                  </div>
+                </div>
+              @endforeach
+
           </div>
         @endforeach
     </div> <!--End output-div-->

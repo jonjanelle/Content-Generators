@@ -4,6 +4,43 @@
 *
 */
 
+/*
+*
+*
+*/
+
+//Ensure the number input with the given id
+//is a positive integer (1 or greater)
+function minInput1(id) {
+    var nInput = document.getElementById(id);
+    nInput.value = Math.floor(nInput.value);
+    if (nInput.value < 1){ nInput.value = 1; }
+}
+
+//Validate the deviation number inputs.
+function checkDev(id) {
+  if (id == 'sent_dev') {
+    minInput1('sent_dev');
+    var sentDev = document.getElementById('sent_dev');
+    var sentences = document.getElementById('num_sent');
+    if (sentDev.value >= sentences.value) {
+      sentDev.value = sentences.value - 1;
+    }
+
+  }
+  else if (id == 'word_dev') {
+    minInput1('word_dev');
+    var wordDev = document.getElementById('word_dev');
+    var numWords = document.getElementById('num_words');
+    if (wordDev.value >= numWords.value){
+      wordDev.value = numWords.value - 1;
+    }
+  }
+
+}
+
+
+
 $(document).ready(function(){
   /*
   If output is being shown, menu starts hidden (up).
@@ -38,4 +75,11 @@ $(document).ready(function(){
     $(this).removeClass("alert-success");
     $(this).addClass("alert-info");
   });
+
+
+  //Enable glyphicon tooltips
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+
 });

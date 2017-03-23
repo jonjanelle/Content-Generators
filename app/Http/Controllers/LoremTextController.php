@@ -19,6 +19,11 @@ class LoremTextController extends Controller {
 
     public function show(Request $request) {
       $words = new WordList("word_list.csv"); // in storage/app/public
+      $this->validate($request, ['num_para'=>'required|numeric|min:1',
+                          'num_sent'=>'required|numeric|min:1',
+                          'sent_dev'=>'required|numeric|min:0',
+                          'num_words'=>'required|numeric|min:1',
+                          'word_dev'=>'required|numeric|min:0']);
 
       //Get paragraph stat inputs.
       $numPara = $request->input("num_para"); //number of paragraphs

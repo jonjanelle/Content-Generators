@@ -22,16 +22,16 @@
       <div class="form-row">
         <label for="pattern-type">Pattern Type</label>
         <select class="form-control" id="pattern-type" name="pattern-type">
-          <option value="linear">Linear</option>
-          <option value="quadratic">Quadratic</option>
-          <option value="exponential">Exponential</option>
-          <option value="logarithmic">Logarithmic</option>
+          <option value="linear" {{$type=='linear'?'selected':'' }}>Linear</option>
+          <option value="quadratic" {{$type=='quadratic'?'selected':'' }}>Quadratic</option>
+          <option value="exponential" {{$type=='exponential'?'selected':'' }}>Exponential</option>
+          <option value="logarithmic" {{$type=='logarithmic'?'selected':'' }}>Logarithmic</option>
         </select>
       </div>
 
       <div class="form-row">
         <label>Number of Points</label>
-        <input type="number" class="form-control" name="n-points" value="{{$nPoints}}">
+        <input type="number" class="form-control" name="n-points" value="{{$nPoints}}" required>
       </div>
 
       <div class="form-row">

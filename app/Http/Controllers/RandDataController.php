@@ -21,6 +21,12 @@
     }
 
     public function show(Request $request) {
+
+      $this -> validate($request, ['pattern-type'=>'required',
+                                   'n-points'=>'required|numeric|min:1',
+                                   'dispersion'=>'required|numeric|min:0',
+                                   'coeff'=>'required|numeric']);
+
       $nPoints = $request->input("n-points"); //number of points
       $data1 = new RandData($nPoints);
       $dispersion = $request->input("dispersion");
@@ -51,7 +57,7 @@
                    "viscosity", "marbles eaten", "flying squirrels", "night sweating",
                    "phone addiction", "vitamin A deficiency","hair length",
                    "balloon enthusiasm"];
-                   
+
         $xHead = $labels[array_rand($labels)];
         $yHead = $labels[array_rand($labels)];
         $randhead = "checked";

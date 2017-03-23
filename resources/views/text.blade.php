@@ -21,26 +21,51 @@
       <div class="form-section-title">Text Statistics</div>
       <div class="row">
         <div class="col col-md-6">
-          <label>Number of paragraphs:</label>
-          <input type="number" class="form-control" name="num_para" value="{{$numPara}}">
+          <label>
+            <a href="#" data-toggle="tooltip" title="Required.">
+              <span class="glyphicon glyphicon-info-sign"></span>
+            </a>
+            Number of paragraphs:
+          </label>
+          <input type="number" class="form-control" id="num_para" name="num_para" value="{{$numPara}}" onchange="minInput1('num_para')" required>
         </div>
         <div class="col col-md-6">
-          <label>Average sentences per paragraph:</label>
-          <input type="number" class="form-control" name="num_sent" value="{{$paraLen}}">
+          <label>
+            <a href="#" data-toggle="tooltip" title="Required. Actual length may vary based on specified deviation.">
+              <span class="glyphicon glyphicon-info-sign"></span>
+            </a>
+            Average sentences per paragraph:</label>
+          <input type="number" class="form-control" id="num_sent" name="num_sent" value="{{$paraLen}}" onchange="minInput1('num_sent')" required>
         </div>
 
         <div class="col col-md-6">
-          <label>Max deviation from average sentences per paragraph: </label>
-          <input type="number" class="form-control" name="sent_dev" value="{{$paraDev}}">
+          <label>
+            <a href="#" data-toggle="tooltip" title="Required. Max random difference from sentences per paragraph. Must be less than number of paragraphs.">
+              <span class="glyphicon glyphicon-info-sign"></span>
+            </a>
+            Max deviation from average sentences per paragraph:
+          </label>
+          <input type="number" class="form-control" id="sent_dev" name="sent_dev" value="{{$paraDev}}" onchange="checkDev('sent_dev')" required>
         </div>
 
         <div class="col col-md-6">
-          <label>Average number of words per sentence:</label>
-          <input type="number" class="form-control" name="num_words" value="{{$sentLen}}">
+
+          <label>
+              <a href="#" data-toggle="tooltip" title="Required. Actual length may vary based on specified deviation.">
+                <span class="glyphicon glyphicon-info-sign"></span>
+              </a>
+            Average number of words per sentence:
+          </label>
+          <input type="number" class="form-control" id="num_words" name="num_words" value="{{$sentLen}}" onchange="minInput1('num_words')" required>
         </div>
         <div class="col col-md-6">
-          <label>Max deviation from average words per sentence:</label>
-          <input type="number" class="form-control" name="word_dev" value="{{$sentDev}}">
+          <label>
+            <a href="#" data-toggle="tooltip" title="Required. Max random difference from words per sentence. Must be less than words per sentence.">
+              <span class="glyphicon glyphicon-info-sign"></span>
+            </a>
+            Max deviation from average words per sentence:
+          </label>
+          <input type="number" class="form-control" id="word_dev" name="word_dev" value="{{$sentDev}}" onchange="checkDev('word_dev')" required>
         </div>
       </div>
 
