@@ -1,6 +1,12 @@
 a:hover {
   text-decoration: none;
 }
+a:link {
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
+}
 
 label {
   margin-top: 5px;
