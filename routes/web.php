@@ -26,4 +26,6 @@ Route::get('/data', 'RandDataController@index');
 Route::get('/datasubmit', 'RandDataController@show');
 
 //log viewer
-Route::get('logs', '\Melihovv\LaravelLogViewer\LaravelLogViewerController@index');
+if (getenv('APP_ENV')=='local') {
+  Route::get('logs', '\Melihovv\LaravelLogViewer\LaravelLogViewerController@index');
+}
