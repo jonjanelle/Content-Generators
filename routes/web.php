@@ -24,3 +24,6 @@ Route::get('/textsubmit', 'LoremTextController@show');
 //Routes for random data generator
 Route::get('/data', 'RandDataController@index');
 Route::get('/datasubmit', 'RandDataController@show');
+
+//log viewer
+Route::get('logs', '\Melihovv\LaravelLogViewer\LaravelLogViewerController@index');
