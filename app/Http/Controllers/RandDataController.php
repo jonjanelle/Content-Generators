@@ -14,7 +14,7 @@
                                  'xHead'=>'X',
                                  'yHead'=>'Y',
                                  'nPoints'=>25,
-                                 'randhead'=>"unchecked",
+                                 'randhead'=>"",
                                  'dispersion'=>5,
                                  'coeff'=>1,
                                  'type'=>'linear']);
@@ -45,7 +45,7 @@
       $labels = $request->input("col-labels");
       $xHead ="X";
       $yHead ="Y";
-      $randhead = "unckecked";
+      $randhead = "";
       if ($labels != null) {
         $labels = ["height", "cholesterol", "smugness", "cupcakes", "smoothness",
                    "moon opacity", "loudness", "nostril radius", "eyebrow tension", "heart rate",
