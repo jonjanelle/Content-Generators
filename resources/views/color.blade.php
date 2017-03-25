@@ -25,17 +25,17 @@
         <div class="btn-group" data-toggle="buttons">
           <div class="col col-md-12">
             <div class="radio btn btn-primary center-block {{$type=='Triadic' ? 'active':'' }}">
-                <label>Triadic<input type="radio" name="palette-type" value="triadic" {{$type=='Triadic' ? 'checked"':'' }}></label>
+                <label>Triadic<input type="radio" name="palette-type" value="triadic" {{$type=='Triadic' ? 'checked':'' }}></label>
             </div>
           </div>
           <div class="col col-md-12">
             <div class="radio btn btn-primary center-block {{$type=='Complementary'?'active':'' }}">
-              <label>Complementary<input type="radio" name="palette-type" value="comp" {{$type=='Complementary' ? '"checked"':''}}></label>
+              <label>Complementary<input type="radio" name="palette-type" value="comp" {{$type=='Complementary' ? 'checked':''}}></label>
             </div>
           </div>
           <div class="col col-md-12">
             <div class="radio btn btn-primary center-block {{$type=='Split Complementary'?'active':'' }}">
-              <label>Split-Complementary<input type="radio" name="palette-type" value="split-comp" {{$type=='Split Complementary' ? '"checked"':''}}></label>
+              <label>Split-Complementary<input type="radio" name="palette-type" value="split-comp" {{$type=='Split Complementary' ? 'checked':''}}></label>
             </div>
           </div>
         </div>
