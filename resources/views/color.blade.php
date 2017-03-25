@@ -25,17 +25,17 @@
         <div class="btn-group" data-toggle="buttons">
           <div class="col col-md-12">
             <div class="radio btn btn-primary center-block {{$type=='Triadic' ? 'active':'' }}">
-                <label>Triadic<input type="radio" name="palette-type" value="triadic" {{$type=='Triadic' ? 'checked="checked"':'' }}></label>
+                <label>Triadic<input type="radio" name="palette-type" value="triadic" {{$type=='Triadic' ? 'checked"':'' }}></label>
             </div>
           </div>
           <div class="col col-md-12">
             <div class="radio btn btn-primary center-block {{$type=='Complementary'?'active':'' }}">
-              <label>Complementary<input type="radio" name="palette-type" value="comp" {{$type=='Complementary' ? 'checked="checked"':''}}></label>
+              <label>Complementary<input type="radio" name="palette-type" value="comp" {{$type=='Complementary' ? '"checked"':''}}></label>
             </div>
           </div>
           <div class="col col-md-12">
             <div class="radio btn btn-primary center-block {{$type=='Split Complementary'?'active':'' }}">
-              <label>Split-Complementary<input type="radio" name="palette-type" value="split-comp" {{$type=='Split Complementary' ? 'checked="checked"':''}}></label>
+              <label>Split-Complementary<input type="radio" name="palette-type" value="split-comp" {{$type=='Split Complementary' ? '"checked"':''}}></label>
             </div>
           </div>
         </div>
@@ -69,16 +69,13 @@
             <div class="result-row-header">
               Base Color: {{$base}}&nbsp;&nbsp;&nbsp;
               Type: {{$result['type']}}</div>
-
               @foreach ($result['color'] as $c)
-
                 <div class="col-xs-3 out-box" style="background-color:{{$c}}">
                   <div class="out-shade">
                   {{$c}}
                   </div>
                 </div>
               @endforeach
-
           </div>
         @endforeach
     </div> <!--End output-div-->
@@ -86,7 +83,7 @@
 
   <div id="reference-image">
     <p>All calculations based on the hex color wheel</p>
-    <img src="images/colorwheel.png">
+    <img src="images/colorwheel.png" alt="hex color wheel">
   </div>
 
 @endsection
