@@ -68,12 +68,13 @@
           <div class="row center-block result-row">
             <div class="result-row-header">
               Base Color: {{$base}}&nbsp;&nbsp;&nbsp;
-              Type: {{$type}}</div>
+              Type: {{$result['type']}}</div>
 
-              @foreach ($result as $c)
+              @foreach ($result['color'] as $c)
+
                 <div class="col-xs-3 out-box" style="background-color:{{$c}}">
                   <div class="out-shade">
-                    {{$c}}
+                  {{$c}}
                   </div>
                 </div>
               @endforeach

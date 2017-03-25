@@ -114,6 +114,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => ['num_para'=>'number of paragraphs',
+                     'num_sent'=>'average sentences per paragraph',
+                     'sent_dev'=>'max deviation from average sentences per paragraph',
+                     'num_words'=>'average words per sentence',
+                     'word_dev'=>'max deviation from average words per sentence',
+                     'n-points'=>'number of points',
+                     'coeff'=>'coefficient'],
 
-];
+    ];

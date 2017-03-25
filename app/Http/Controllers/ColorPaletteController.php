@@ -33,32 +33,37 @@
       $palette = new ColorPalette($request->input('base-color'));
       $type = $request->input('palette-type');
 
-      $color = array();
+      $color = ['color'=>array(), 'type'=>""];
       if ($type=="triadic") {
-        $color = $palette->getTriadic();
+        //$color = $palette->getTriadic();
+        $color['color'] = $palette->getTriadic();
         $type="Triadic";
+
       }
       else if ($type=="comp"){
-        $color = $palette->getComplementary();
+        //$color = $palette->getComplementary();
+        $color['color'] = $palette->getComplementary();
         $type="Complementary";
       }
       else if ($type=="split-comp"){
-        $color = $palette->getSplitComp();
+        //$color = $palette->getSplitComp();
+        $color['color'] = $palette->getSplitComp();
         $type="Split Complementary";
       }
-
-      //push to front so newest appears on top
+      $color['type']=$type;
+      
+      //push to front so newest appears result always appears on top
       array_unshift($_SESSION['results'], $color);
       $results = $_SESSION['results'];
 
       $base = $palette->getBaseColor();
       $out_format = $request->input('output-format');
       if ($out_format=='rgb') {
-        //Need to convert all result values to rgb strings.
+        //convert all result values to rgb strings.
         $base = ColorPalette::hexToRgb($base, true);
         for ($i=0; $i<count($results); $i++){
           for ($j = 0; $j<count($results[$i]); $j++){
-            $results[$i][$j]=ColorPalette::hexToRgb($results[$i][$j], true);
+            $results[$i]['color'][$j]=ColorPalette::hexToRgb($results[$i]['color'][$j], true);
           }
         }
       }
