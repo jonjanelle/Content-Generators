@@ -4,11 +4,6 @@
 *
 */
 
-/*
-*
-*
-*/
-
 //Ensure the number input with the given id
 //is a positive integer (1 or greater)
 function minInput1(id) {
