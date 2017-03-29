@@ -45,8 +45,8 @@
     <div class="form-section-title">Output Format</div>
     <div class="form-row">
       <select class="form-control" id="output-format" name="output-format">
-        <option class="option" value="hex" {{$colorFormat=='hex'?'selected':'' }}>Hex</option>
-        <option class="option" value="rgb" {{$colorFormat=='rgb'?'selected':'' }}>RGB</option>
+        <option class="option" value="hex" {{$colorFormat=='hex'?'selected':''}}>Hex</option>
+        <option class="option" value="rgb" {{$colorFormat=='rgb'?'selected':''}}>RGB</option>
       </select>
     </div>
 

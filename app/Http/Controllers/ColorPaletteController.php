@@ -21,6 +21,7 @@
     /**
     * GET
     * /submit
+    * Validate and process result of form submission
     */
     public function show(Request $request) {
       if (!isset($_SESSION['results'])){
@@ -51,19 +52,20 @@
         $type="Split Complementary";
       }
       $color['type']=$type;
-      
+
       //push to front so newest appears result always appears on top
       array_unshift($_SESSION['results'], $color);
       $results = $_SESSION['results'];
 
       $base = $palette->getBaseColor();
       $out_format = $request->input('output-format');
+
+      //Convert result labels to (r,g,b) strings if requested
       if ($out_format=='rgb') {
-        //convert all result values to rgb strings.
         $base = ColorPalette::hexToRgb($base, true);
         for ($i=0; $i<count($results); $i++){
-          for ($j = 0; $j<count($results[$i]); $j++){
-            $results[$i]['color'][$j]=ColorPalette::hexToRgb($results[$i]['color'][$j], true);
+          for ($j=0; $j<count($results[$i]['color']); $j++){
+              $results[$i]['color'][$j]=ColorPalette::hexToRgb($results[$i]['color'][$j],true);
           }
         }
       }

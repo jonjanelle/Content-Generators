@@ -38,7 +38,9 @@ class ColorPalette {
 
     /*
       Convert a hex string to a length 3 array of integer RGB values
-      Hex string is assumed to have the format: "#RRGGBB"
+      $hexColor: String with format "#RRGGBB"
+      $asString: boolean indicating whether result should be returned as a
+                 string of the format (r,g,b) or as an array of rgb values
     */
     static function hexToRgb($hexColor, $asString=false){
       if ( !(is_string($hexColor) &&  //should do regex matching here.
