@@ -34,7 +34,14 @@ function checkDev(id) {
 
 }
 
-
+function copyToClipboard() {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($('#lorem-text-output').text().trim()).select();
+    document.execCommand("copy");
+    $temp.remove();
+    $('#result-header-copy').html("Copied!");
+}
 
 $(document).ready(function(){
   /*

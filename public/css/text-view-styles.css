@@ -64,6 +64,21 @@ label {
   background-color: #D5D5FF;
   border: 1px solid #90B0C0;
 }
+#result-header-copy {
+  display: inline;
+  float:right;
+  margin: 10px 10px 10px 10px;
+  vertical-align: center;
+  font-size: 1.5rem;
+  letter-spacing: normal;
+  color: #000055;
+
+}
+#result-header-copy:hover {
+  cursor: pointer;
+  background-color: #C5C5DF;
+  border-radius: 8px;
+}
 
 .result-content {
   width: 90%;

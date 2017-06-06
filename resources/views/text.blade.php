@@ -100,8 +100,12 @@
     <div id="ouput-div" style="display:{{$display}}">
       <div class="result-header">
         Result
+        <div id="result-header-copy" onclick="copyToClipboard()">
+          copy
+        </div>
       </div>
-      <div class="result-content">
+
+      <div class="result-content" id="lorem-text-output">
         @foreach ($loremText as $p)
           <p>
             @if ($headers)
